@@ -1,0 +1,43 @@
+{
+  "nsfw_detection": {
+    "enabled": true,
+    "time_interval": 0.5,
+    "blur_strength": 51
+  },
+  "gun_detection": {
+    "enabled": true,
+    "time_interval": 0.5,
+    "confidence_threshold": 0.4,
+    "device": "auto",
+    "model_path": "weapon_detection.pt"
+  },
+  "transcription": {
+    "enabled": true,
+    "whisper_model": "tiny",
+    "device": "cpu",
+    "compute_type": "int8",
+    "chunk_duration": 2.0,
+    "subtitle_duration": 3.0
+  },
+  "profanity_filter": {
+    "enabled": true,
+    "wordlist_file": "profanity_wordlist.txt",
+    "replacement_char": "*"
+  },
+  "audio_sync": {
+    "enabled": true,
+    "max_drift": 0.05,
+    "delay_compensation": 0.0,
+    "buffer_size": 3
+  },
+  "network": {
+    "host": "localhost",
+    "video_port": 9999,
+    "audio_port": 9998
+  },
+  "video": {
+    "target_fps": 24,
+    "jpeg_quality": 80,
+    "scale_factor": 0.9
+  }
+}
