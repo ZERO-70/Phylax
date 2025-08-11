@@ -1,6 +1,8 @@
 # Local Video Streaming with Content Detection
 
-This project implements a comprehensive video streaming system using Python sockets with configurable content detection features including NSFW detection, gun detection, audio transcription, and profanity filtering.
+This project implements a comprehensive video streaming system using Python sockets with configurable content detection features including NSFW detection, gun detection, audio transcription, and profanity detection. 
+
+This project was created with the mutual contributions of ChatGPT, GitHub Copilot, and the developer himmself.
 
 ## Features
 
@@ -11,7 +13,7 @@ This project implements a comprehensive video streaming system using Python sock
 - **🔍 NSFW detection** with automatic blurring (configurable)
 - **🔫 Gun/weapon detection** with bounding boxes (configurable)
 - **🎤 Audio transcription** using Whisper (configurable)
-- **🚫 Profanity filtering** for transcriptions (configurable)
+- **🚫 Profanity detection** for transcriptions (configurable)
 - **⚙️ Flexible configuration** via config files, command line, or interactive tool
 - **Graceful connection handling** and cleanup
 
@@ -113,7 +115,7 @@ python receiver.py --help  # See all options
 
 ### Step 1: Start the Sender
 
-Open a terminal/command prompt and run:
+Open a terminal/command prompt and run (make sure that your virtual enviroment is active or you have installed the depencencies globally):
 ```bash
 python sender.py
 ```
@@ -125,9 +127,9 @@ The sender will:
 
 ### Step 2: Start the Receiver
 
-Open another terminal/command prompt and run:
+Open another terminal/command prompt and run (read confi_commands.txt for customized config commands):
 ```bash
-python receiver.py
+source enviroment/bin/activate && python receiver.py --enable-nsfw --enable-gun --enable-transcription --enable-profanity --whisper-model small
 ```
 
 The receiver will:
@@ -278,15 +280,16 @@ def blur_frame(self, frame, blur_strength=50):  # Increase for more blur
 
 ## System Requirements
 
-- **OS**: Windows, macOS, or Linux
-- **Python**: 3.7 or higher
-- **Memory**: At least 2GB RAM recommended
-- **Storage**: Enough space for your video file
-- **Internet**: Required for NSFW model download (first run only)
+- **OS**: prefered Linux Ubunutu gnome wayland , otherwise make changes accordingly.
+- **Python**: 3.11 or higher
+- **hardware**: At least 8GB RAM | 16GB recommended ,you do need a dedicated GPU.
+- **Storage**: Enough space for your video file + 7 GB for dependencies.
+- **Internet**: Nope , unless you modify to take an actuall stream from internet other than the local stream.
 
 ## License
 
-This project is open source and available under the MIT License. # stream-01
-# stream-01
-# stream-01
-# stream-01
+This project is open source and available under the MIT License.
+
+### Contributing
+
+I would love for other developers to contribute to this project. If you have ideas, improvements, or bug fixes, please open an issue or submit a pull request. You can also check `Commands.md` for quick setup and commonly used commands.
